@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { GlobalProvider } from "../../Global/ContexGlobal/GlobalContex";
+import { FaMoon } from "react-icons/fa";
+import { MdOutlineWbSunny } from "react-icons/md";
 
 const Header = () => {
   const { setTheme, theme } = useContext(GlobalProvider);
@@ -17,13 +19,28 @@ const Header = () => {
   return (
     <Container>
       <Wrapper>
-        <LogoDiv src="/image/ttlogo.png" alt="" />
+        {/* <LogoDiv src="/image/ttlogo.png" alt="" /> */}
+
+        <LogoHold>Dev-Bucket.</LogoHold>
         <SignDiv>
-          <NavLink to="signup">
+          {/* <NavLink to="signup">
             <SignBtn>Sign Up</SignBtn>
+          </NavLink> */}
+          <ToggleHold>
+            {theme === "light" ? (
+              <div style={{ cursor: "pointer" }} onClick={changeTheme}>
+                <FaMoon color="#377dff" size="20px" />
+              </div>
+            ) : (
+              <div style={{ cursor: "pointer" }} onClick={changeTheme}>
+                <MdOutlineWbSunny color="#fff" size="20px" />
+              </div>
+            )}
+          </ToggleHold>
+          <NavLink to="signin">
+            <SignBtn>Log In</SignBtn>
           </NavLink>
-          <SignBtn>Log In</SignBtn>
-          <SignBtn onClick={changeTheme}>Change</SignBtn>
+          {/* <SignBtn >Change</SignBtn> */}
         </SignDiv>
       </Wrapper>
     </Container>
@@ -48,11 +65,20 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const LogoDiv = styled.img`
-  width: 50px;
-  margin: 10px;
+// const LogoDiv = styled.img`
+//   width: 50px;
+//   margin: 10px;
+// `;
+
+const LogoHold = styled.div`
+  font-weight: 900;
+  font-size: 20px;
 `;
-const SignDiv = styled.div``;
+
+const SignDiv = styled.div`
+  display: flex;
+  align-items: center;
+`;
 const SignBtn = styled.button`
   height: 34px;
   width: 120px;
@@ -71,3 +97,5 @@ const SignBtn = styled.button`
     transform: scale(0.94);
   }
 `;
+
+const ToggleHold = styled.div``;

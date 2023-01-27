@@ -47,6 +47,7 @@ const Container = styled.div`
 
   ::before {
     content: "Every";
+    color: #377dff;
     position: absolute;
     height: 78px;
     width: 1100px;

@@ -51,6 +51,7 @@ const Container = styled.div`
 
   ::before {
     content: "Every";
+    color: #377dff;
     position: absolute;
     height: 78px;
     width: 1100px;
@@ -61,6 +62,7 @@ const Container = styled.div`
 
   ::after {
     content: "Man";
+    color: #377dff;
     position: absolute;
     height: 78px;
     width: 670px;
