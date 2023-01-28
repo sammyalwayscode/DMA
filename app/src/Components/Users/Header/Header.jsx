@@ -2,45 +2,68 @@ import React from "react";
 import styled from "styled-components";
 import { BiSearchAlt } from "react-icons/bi";
 import { GoThreeBars } from "react-icons/go";
+import { useState } from "react";
+import SideBar from "./SideBar";
+import { GiCancel } from "react-icons/gi";
 
 const Header = () => {
-  return (
-    <Container>
-      <Wrapper>
-        <LogoNavs>
-          <LogoHold>DevBucket</LogoHold>
-          <Navagations>
-            <Navs>
-              <span>For You</span>
-              <hr />
-            </Navs>
-            <Navs>
-              <span>Favorite</span>
-              <hr />
-            </Navs>
-          </Navagations>
-        </LogoNavs>
-        <SearchProfile>
-          <SearcHold>
-            <BiSearchAlt />
-            <input type="search" placeholder="Make a Search..." />
-          </SearcHold>
-          <Button>Share Your Work</Button>
-          <Avatar>
-            <img src="/image/ava.png" alt="" />
-          </Avatar>
-        </SearchProfile>
+  const [toogle, setToggle] = useState(false);
 
-        <NavBar>
-          <Avatar>
-            <img src="/image/ava.png" alt="" />
-          </Avatar>
-          <BuggerMenu>
-            <GoThreeBars />
-          </BuggerMenu>
-        </NavBar>
-      </Wrapper>
-    </Container>
+  const toggleSwitch = () => {
+    setToggle(!toogle);
+  };
+
+  return (
+    <>
+      <Container>
+        <Wrapper>
+          <LogoNavs>
+            <LogoHold>DevBucket</LogoHold>
+            <Navagations>
+              <Navs>
+                <span>For You</span>
+                <hr />
+              </Navs>
+              <Navs>
+                <span>Favorite</span>
+                <hr />
+              </Navs>
+            </Navagations>
+          </LogoNavs>
+          <SearchProfile>
+            <SearcHold>
+              <BiSearchAlt />
+              <input type="search" placeholder="Make a Search..." />
+            </SearcHold>
+            <Button>Share Your Work</Button>
+            <Avatar>
+              <img src="/image/ava.png" alt="" />
+            </Avatar>
+          </SearchProfile>
+
+          <NavBar>
+            <Avatar>
+              <img src="/image/ava.png" alt="" />
+            </Avatar>
+            <BuggerMenu>
+              {toogle ? (
+                <GiCancel onClick={toggleSwitch} />
+              ) : (
+                <GoThreeBars onClick={toggleSwitch} />
+              )}
+            </BuggerMenu>
+          </NavBar>
+        </Wrapper>
+      </Container>
+
+      {toogle ? (
+        <SideBar
+          toogle={toogle}
+          setToggle={setToggle}
+          toggleSwitch={toggleSwitch}
+        />
+      ) : null}
+    </>
   );
 };
 
