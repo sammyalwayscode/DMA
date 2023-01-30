@@ -5,6 +5,7 @@ import { GoThreeBars } from "react-icons/go";
 import { useState } from "react";
 import SideBar from "./SideBar";
 import { GiCancel } from "react-icons/gi";
+import CategoriesStat from "./CategoriesStat";
 
 const Header = () => {
   const [toogle, setToggle] = useState(false);
@@ -55,7 +56,7 @@ const Header = () => {
           </NavBar>
         </Wrapper>
       </Container>
-
+      <CategoriesStat />
       {toogle ? (
         <SideBar
           toogle={toogle}
