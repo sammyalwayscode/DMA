@@ -31,6 +31,10 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   overflow-x: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 const CateCards = styled.button`
   height: 30px;
