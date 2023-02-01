@@ -129,15 +129,16 @@ const Container = styled.div`
   background-color: ba;
 `;
 const Wrapper = styled.div`
-  width: 90%;
+  width: 95%;
   color: #000;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: aliceblue;
 `;
 const DisplayCards = styled.div`
   height: 260px;
-  width: 270px;
+  width: 300px;
   /* background-color: aliceblue; */
   margin: 10px;
 `;
