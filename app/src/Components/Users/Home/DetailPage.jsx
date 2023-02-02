@@ -1,6 +1,7 @@
 import React from "react";
 import { AiFillEye, AiFillHeart } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
+import { BsDot } from "react-icons/bs";
 import styled from "styled-components";
 
 const DetailPage = () => {
@@ -87,7 +88,7 @@ const DetailPage = () => {
             <CommentDivHold>
               <PostComments>
                 <UserAva>
-                  <img src="" alt="" />
+                  <img src="/image/ava.png" alt="" />
                 </UserAva>
                 <TextAreaBtn>
                   <textarea placeholder="What are your thoughts on this project?" />
@@ -100,10 +101,14 @@ const DetailPage = () => {
               <AllComments>
                 <UserComment>
                   <UserCommAva>
-                    <img src="" alt="" />
+                    <img src="/image/ava.png" alt="" />
                   </UserCommAva>
                   <UserCommDetails>
-                    <UserNameDate>Olorunda Samuel | 2 minutes ago</UserNameDate>
+                    <UserNameDate>
+                      {" "}
+                      <span>Olorunda Samuel</span> <BsDot />{" "}
+                      <small>2 minutes ago</small>{" "}
+                    </UserNameDate>
                     <UserMainComment>
                       No highly saturated colors. Brilliant color balance!
                     </UserMainComment>
@@ -258,19 +263,106 @@ const CommentsDiv = styled.div`
   justify-content: center;
 `;
 const CommentDivHold = styled.div`
-  width: 85%;
+  width: 80%;
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  hr {
+    width: 100%;
+    border: none;
+    background-color: lightgray;
+    height: 1px;
+  }
 `;
-const PostComments = styled.div``;
-const UserAva = styled.div``;
-const TextAreaBtn = styled.div``;
-const AreaBtn = styled.div``;
-const AllComments = styled.div``;
-const UserComment = styled.div``;
-const UserCommAva = styled.div``;
+const PostComments = styled.div`
+  width: 95%;
+  /* background-color: aliceblue; */
+  margin-top: 20px;
+  display: flex;
+  margin-bottom: 30px;
+`;
+const UserAva = styled.div`
+  height: 50px;
+  width: 50px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  margin-right: 20px;
+  img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+`;
+const TextAreaBtn = styled.div`
+  width: 100%;
+  textarea {
+    width: 98%;
+    height: 120px;
+    resize: none;
+    border: 1px solid lightgray;
+    font-family: Montserrat;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-top: 10px;
+    outline: none;
+  }
+`;
+const AreaBtn = styled.div`
+  margin: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+  button {
+    height: 35px;
+    width: 150px;
+    border-radius: 40px;
+    background-color: transparent;
+    border: 1px solid lightgray;
+    transition: all 350ms;
+    font-family: Montserrat;
+    font-weight: 600;
+    cursor: pointer;
+    :hover {
+      background-color: #f1f1f1;
+      transform: scale(0.97);
+    }
+  }
+`;
+const AllComments = styled.div`
+  width: 95%;
+  display: flex;
+`;
+const UserComment = styled.div`
+  display: flex;
+`;
+const UserCommAva = styled.div`
+  height: 50px;
+  width: 50px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  margin-right: 20px;
+  img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+`;
 const UserCommDetails = styled.div``;
-const UserNameDate = styled.div``;
+const UserNameDate = styled.div`
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  small {
+    font-size: 11px;
+    font-weight: lighter;
+  }
+`;
 const UserMainComment = styled.div``;
