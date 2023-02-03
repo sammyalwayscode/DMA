@@ -114,9 +114,40 @@ const DetailPage = () => {
                     </UserMainComment>
                   </UserCommDetails>
                 </UserComment>
+                <UserComment>
+                  <UserCommAva>
+                    <img src="/image/grr.jpg" alt="" />
+                  </UserCommAva>
+                  <UserCommDetails>
+                    <UserNameDate>
+                      {" "}
+                      <span>Lawal Ayomide</span> <BsDot />{" "}
+                      <small>17 minutes ago</small>{" "}
+                    </UserNameDate>
+                    <UserMainComment>
+                      Detailed yet simple, great concept and project!
+                    </UserMainComment>
+                  </UserCommDetails>
+                </UserComment>
               </AllComments>
             </CommentDivHold>
           </CommentsDiv>
+          <GitHubLiveCard>
+            <GitLiveCardHold>
+              <GitCardHold>
+                <TopCard>CheckOut My Codes</TopCard>
+                <CardButton>
+                  <button>View On GitHub</button>
+                </CardButton>
+              </GitCardHold>
+              <GitCardHold>
+                <TopCard>View Live Project</TopCard>
+                <CardButton>
+                  <button>Go To Site</button>
+                </CardButton>
+              </GitCardHold>
+            </GitLiveCardHold>
+          </GitHubLiveCard>
         </ButtomBox>
       </Wrapper>
     </Container>
@@ -336,9 +367,11 @@ const AreaBtn = styled.div`
 const AllComments = styled.div`
   width: 95%;
   display: flex;
+  flex-direction: column;
 `;
 const UserComment = styled.div`
   display: flex;
+  margin: 20px 0;
 `;
 const UserCommAva = styled.div`
   height: 50px;
@@ -366,3 +399,49 @@ const UserNameDate = styled.div`
   }
 `;
 const UserMainComment = styled.div``;
+
+const GitHubLiveCard = styled.div`
+  margin-bottom: 30px;
+`;
+const GitLiveCardHold = styled.div`
+  display: flex;
+`;
+const GitCardHold = styled.div`
+  height: 240px;
+  width: 432px;
+  background-color: #fff;
+  margin: 0 25px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+`;
+const TopCard = styled.div`
+  height: 120px;
+  background-color: #000;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const CardButton = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  button {
+    height: 35px;
+    width: 90%;
+    border-radius: 40px;
+    background-color: transparent;
+    border: 1px solid lightgray;
+    transition: all 350ms;
+    font-family: Montserrat;
+    font-weight: 600;
+    cursor: pointer;
+    :hover {
+      background-color: #f1f1f1;
+      transform: scale(0.97);
+    }
+  }
+`;
